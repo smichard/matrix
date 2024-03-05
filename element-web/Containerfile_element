@@ -1,0 +1,14 @@
+# Builder
+FROM --platform=linux/amd64 vectorim/element-web:v1.11.58 as origin
+
+# App
+FROM --platform=linux/amd64 quay.io/nginx/nginx-unprivileged:alpine3.18
+
+USER 0
+
+COPY --from=origin /app /app
+
+RUN rm -rf /usr/share/nginx/html && \
+    ln -s /app /usr/share/nginx/html
+
+USER 10001
