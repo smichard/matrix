@@ -17,7 +17,7 @@ spec:
   - name: container-file
     type: string
     description: "Name and location of the Containerfile, default ./Dockerfile"
-    default: "./element-web/Containerfile_matrix"
+    default: "./matrix/Containerfile_matrix"
   - name: target-image
     type: string
     description: "Image to be build from the code and push to external registry"
