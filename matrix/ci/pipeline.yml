@@ -1,0 +1,79 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: matrix
+spec:
+  workspaces:
+  - name: shared-workspace
+  - name: registry-credentials
+  params:
+  - name: git-url
+    type: string
+    description: "Url of the git repo for the code of deployment"
+    default: https://github.com/smichard/matrix
+  - name: git-revision
+    type: string
+    description: "Revision to be used from repo of the code for deployment"
+  - name: container-file
+    type: string
+    description: "Name and location of the Containerfile, default ./Dockerfile"
+    default: "./element-web/Containerfile_matrix"
+  - name: target-image
+    type: string
+    description: "Image to be build from the code and push to external registry"
+    default: quay.io/michard/matrix
+  - name: target-tag
+    type: string
+    description: "Tag to be used to tag the image"
+  - name: message
+    type: string
+    description: "The message to send to the Matrix room"
+    default: "Matrix: new image build and pushed to internal and external registry. Build Tag:"
+  - name: notification-secret
+    type: string
+    description: "Secret containing the Matrix credentials"
+    default: "matrix-secret"
+  tasks:
+  - name: fetch-repository
+    taskRef:
+      name: git-clone
+      kind: ClusterTask
+    workspaces:
+    - name: output
+      workspace: shared-workspace
+    params:
+    - name: url
+      value: $(params.git-url)
+    - name: subdirectory
+      value: ""
+    - name: deleteExisting
+      value: "true"
+    - name: revision
+      value: $(params.git-revision)
+  - name: build-image-external
+    retries: 1
+    taskRef:
+      name: buildah
+      kind: ClusterTask
+    params:
+    - name: IMAGE
+      value: $(params.target-image):$(params.target-tag)
+    - name: DOCKERFILE
+      value: $(params.container-file)
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    - name: dockerconfig
+      workspace: registry-credentials
+    runAfter:
+    - fetch-repository
+  - name: notification
+    taskRef:
+      name: notification-to-matrix
+    params:
+    - name: message
+      value: $(params.target-image) $(params.message) $(params.target-tag)
+    - name: notification-secret
+      value: $(params.notification-secret)
+    runAfter:
+      - build-image-external
