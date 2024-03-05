@@ -1,0 +1,10 @@
+FROM --platform=linux/amd64 matrixdotorg/synapse:v1.101.0
+
+USER 0
+
+RUN chown -R 10001:10001 /start.py && \
+    chown -R 10001:10001 /conf && \
+    mkdir /data && \
+    chown -R 10001:10001 /data
+
+USER 10001
