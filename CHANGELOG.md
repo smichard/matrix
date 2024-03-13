@@ -6,10 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## 0.3.0 (2024-03-13)
+
 ### Bug Fixes
 - :bug: matrix pipeline adjusted [`76c291c`](https://github.com/smichard/matrix/commit/76c291c)
 
 ### Documentation
+- :robot: changelog file generated [`697baec`](https://github.com/smichard/matrix/commit/697baec)
 - :memo: ReadMe set up [`14ea434`](https://github.com/smichard/matrix/commit/14ea434)
 
 ### Chore
