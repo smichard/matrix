@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Bug Fixes
+- :bug: matrix pipeline adjusted [`76c291c`](https://github.com/smichard/matrix/commit/76c291c)
+
+### Documentation
+- :memo: ReadMe set up [`14ea434`](https://github.com/smichard/matrix/commit/14ea434)
+
+### Chore
+- update vectorim/element-web docker tag to v1.11.60 [`f42d580`](https://github.com/smichard/matrix/commit/f42d580)
+
+### Other
+- Merge pull request #5 from smichard/renovate/vectorim-element-web-1.x [`9488a3a`](https://github.com/smichard/matrix/commit/9488a3a)
+
+## 0.2.0 (2024-03-05)
+
+### Documentation
+- :robot: changelog file generated [`6ce4382`](https://github.com/smichard/matrix/commit/6ce4382)
+
 ### Chore
 - update matrixdotorg/synapse docker tag to v1.102.0 [`0b32765`](https://github.com/smichard/matrix/commit/0b32765)
 - update vectorim/element-web docker tag to v1.11.59 [`1fb0263`](https://github.com/smichard/matrix/commit/1fb0263)
