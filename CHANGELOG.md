@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## 0.6.0 (2024-03-26)
+
+### Chore
+- update vectorim/element-web docker tag to v1.11.62 [`705e5b7`](https://github.com/smichard/matrix/commit/705e5b7)
+
+### Other
+- Merge pull request #8 from smichard/renovate/vectorim-element-web-1.x [`6b4d270`](https://github.com/smichard/matrix/commit/6b4d270)
+
+## 0.5.0 (2024-03-21)
+
+### Chore
+- update matrixdotorg/synapse docker tag to v1.103.0 [`2590185`](https://github.com/smichard/matrix/commit/2590185)
+
+### Other
+- Merge pull request #7 from smichard/renovate/matrixdotorg-synapse-1.x [`675592c`](https://github.com/smichard/matrix/commit/675592c)
+
+## 0.4.0 (2024-03-14)
+
+### Documentation
+- :robot: changelog file generated [`ceee05f`](https://github.com/smichard/matrix/commit/ceee05f)
+
+### Chore
+- update vectorim/element-web docker tag to v1.11.61 [`26e1d9c`](https://github.com/smichard/matrix/commit/26e1d9c)
+
+### Other
+- Merge pull request #6 from smichard/renovate/vectorim-element-web-1.x [`3a38aef`](https://github.com/smichard/matrix/commit/3a38aef)
+
 ## 0.3.0 (2024-03-13)
 
 ### Bug Fixes
