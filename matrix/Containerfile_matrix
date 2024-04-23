@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 matrixdotorg/synapse:v1.104.0
+FROM --platform=linux/amd64 matrixdotorg/synapse:v1.105.1
 
 USER 0
 
