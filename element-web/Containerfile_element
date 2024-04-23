@@ -1,5 +1,5 @@
 # Builder
-FROM --platform=linux/amd64 vectorim/element-web:v1.11.64 as origin
+FROM --platform=linux/amd64 vectorim/element-web:v1.11.65 as origin
 
 # App
 FROM --platform=linux/amd64 quay.io/nginx/nginx-unprivileged:alpine3.18
